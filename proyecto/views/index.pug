@@ -1,19 +1,23 @@
-head
-  meta(charset='UTF-8')
-  meta(http-equiv='X-UA-Compatible' content='IE=edge')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  link(rel='stylesheet', href='../stylesheets/index.css')
-  link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
+extends layout
+
+block cssIndex
+  link(rel='stylesheet' href='stylesheets/index.css')
+
+block content 
   title Inicio
-h2 EvenTec La mejor experiencia en eventos
-#container.container
-  .form-container.sign-in-container
-    form(action='/usuario/create' method='POST')
-      h1 Inicia Sesi&oacute;n
-      span Completa la informaci&oacute;n
-      input(type='String' placeholder='Tipo')
-      input(type='email' placeholder='Usuario')
-      input(type='password' placeholder='Contraseña')
-      a(href='create.pug' role='button') Ingresar
-  .overlay-container
-    .overlay
+  h2 EvenTec La mejor experiencia en eventos
+  #container.container
+    .form-container.sign-in-container
+      form(action='index2.html')
+        h1 Inicia Sesi&oacute;n
+        span Completa la informaci&oacute;n
+        input(type='email' placeholder='Usuario')
+        input(type='password' placeholder='Password')
+        a(href='index2.html' role='button') Ingresar
+    .overlay-container
+      .overlay
+  if user
+    h1 si
+  else 
+    h1 no
+  h1= user
