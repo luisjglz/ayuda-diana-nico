@@ -5,7 +5,11 @@ let usuarioController = require('../controllers/usuario')
 
 //Crear un nuevo administrador
 router.get('/create', usuarioController.usuario_create_get);
-router.post('/create',usuarioController.usuario_create_post);
 
-module.exports = router;
+//endpoint para añadir usuarios
+router.post('/create',usuarioController.usuario_create);
+
+router.get('/', usuarioController.usuario_list)
+
+module.exports = router; 
 

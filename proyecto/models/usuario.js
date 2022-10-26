@@ -14,6 +14,19 @@ usuarioSchema.statics.allAdmins = function allAdmins(cb){
     })
     */
     return this.find({}, cb)
+} 
+
+
+usuarioSchema.statics.createInstance = function(type, user, password){
+    return new this({
+        type: type,
+        user: user,
+        password: password
+    })
+}
+
+usuarioSchema.statics.add = function(aUsr, cb){
+    this.create(aUsr, cb)
 }
 
 module.exports = mongoose.model('Usuarios', usuarioSchema)
