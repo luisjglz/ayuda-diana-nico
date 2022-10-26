@@ -8,10 +8,12 @@ let usuarioSchema = new Schema({
 })
 
 usuarioSchema.statics.allAdmins = function allAdmins(cb){
+    /*
     Usuarios.find({}, function(err, usr){
         res.render("/",{user: usr})
     })
-    // return this.find({}, cb)
+    */
+    return this.find({}, cb)
 }
 
 module.exports = mongoose.model('Usuarios', usuarioSchema)
